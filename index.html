@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NUmbers Table</title>
+    <style>
+      body {
+        background-color:#5b7077
+
+
+      }
+      form,
+      label,
+      input,
+      button {
+        font-size: 1.5rem;
+      }
+      p {
+        text-align: center;
+        font-size: 2.0rem;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <form onsubmit="showTable(); return false">
+      <h1 id="firstHeading">Numbers Table</h1>
+      <div id="firstInput">
+        <label for="num">Number :</label>
+        <input
+          type="number"
+          name="num"
+          id="num"
+          placeholder="Enter a Number"
+        />
+      </div>
+      <div id="secondInput">
+        <label for="range">How Many Times  :</label>
+        <input
+          type="number"
+          name="range"
+          id="range"
+          value=""
+          placeholder="10"
+        />
+      </div>
+      <button type="submit">Generate</button>
+    </form>
+    <p id="result"></p>
+    <script>
+      document.querySelector("#result").style.display = "none"
+      function showTable() {
+        let num = +document.querySelector("#num").value;
+        let range = +document.querySelector("#range").value;
+        let array = [];
+        for (let i = 0; i < range; i++) {
+          array[i] = `${num} X ${i + 1} = ${num * (i + 1)}`;
+        }
+        document.querySelector("#result").style.display = ''
+        document.querySelector("#result").innerHTML = array.join(`<br>`);
+      }
+    </script>
