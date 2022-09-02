@@ -34,8 +34,8 @@
   <body>
     <form onsubmit="showTable(); return false">
       <h1 id="firstHeading">Number Table</h1>
-      <div id="firstInput">
-        <label for="num">Number :</label>
+      <b><div id="firstInput">
+        <label for="num">Number :</label></b>
         <input
           type="number"
           name="num"
@@ -43,8 +43,8 @@
           placeholder="Enter a Number"
         />
       </div>
-      <div id="secondInput">
-        <label for="range">How Many Times  :</label>
+      <b><div id="secondInput">
+        <label for="range">How Many Times  :</label></b>
         <input
           type="number"
           name="range"
@@ -55,7 +55,7 @@
       </div>
       <button type="submit">Generate Table</button>
     </form>
-    <p id="result"></p>
+    <b><p id="result"></p></b>
     <script>
       document.querySelector("#result").style.display = "none"
       function showTable() {
